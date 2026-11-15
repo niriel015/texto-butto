@@ -1,0 +1,4 @@
+{% extends 'admin/base.html' %}{% load static %}
+{% block title %}{{ title }} | LOJA DRICA ADMIN{% endblock %}
+{% block branding %}<div class="hyper-admin-mark"><img class="admin-mark-sticker" src="{% static 'shop/assets/sticker-flower.svg' %}" alt=""> HYPER <em>FEMME</em> <small>STUDIO</small></div>{% endblock %}
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" href="{% static 'shop/admin_femme.css' %}">{% endblock %}

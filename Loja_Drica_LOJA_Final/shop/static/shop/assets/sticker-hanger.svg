@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" role="img" aria-label="Adesivo ilustrado hanger">
+ <defs>
+  <filter id="shadow" x="-35%" y="-35%" width="170%" height="170%"><feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#46213f" flood-opacity=".23"/></filter>
+  <linearGradient id="petal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffc4d8"/><stop offset="1" stop-color="#b776a7"/></linearGradient>
+  <linearGradient id="rose" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe0e8"/><stop offset=".52" stop-color="#f5a4c3"/><stop offset="1" stop-color="#c871aa"/></linearGradient>
+  <linearGradient id="lavender" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fbe6ff"/><stop offset="1" stop-color="#a787d2"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff1c9"/><stop offset="1" stop-color="#d6a66d"/></linearGradient>
+  
+ </defs><g filter="url(#shadow)"><rect x="37" y="42" width="165" height="165" rx="27" fill="url(#lavender)" stroke="white" stroke-width="13"/>
+ <path d="M107 100c-9-14-2-29 14-29s22 15 8 25l-9 8v12" stroke="#69466c" stroke-width="8" stroke-linecap="round" fill="none"/>
+ <path d="M121 116 60 153Q52 163 64 169H178Q190 163 180 153Z" fill="#f8f0ec" stroke="#69466c" stroke-width="7" stroke-linejoin="round"/>
+ <path d="M83 157H159" stroke="#d29cbd" stroke-width="5" stroke-linecap="round"/></g></svg>

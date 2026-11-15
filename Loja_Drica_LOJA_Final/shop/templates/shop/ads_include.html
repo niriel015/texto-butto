@@ -1,0 +1,12 @@
+{% if ads %}
+<section class="hf-ads wrap" aria-label="Anúncios e campanhas da loja">
+ {% for ad in ads %}
+ <article class="hf-ad-card reveal">
+  {% if ad.image %}<a class="hf-ad-media" href="{{ ad.destination }}" target="_blank" rel="noopener noreferrer sponsored"><img src="{{ ad.image.url }}" loading="lazy" alt="{{ ad.title }}"></a>{% endif %}
+  <div class="hf-ad-content"><span class="eyebrow dark-eyebrow">ANÚNCIO DA LOJA</span><h2>{{ ad.title }}</h2>
+  {% if ad.description %}<p>{{ ad.description }}</p>{% endif %}
+  <a class="button button-dark" href="{{ ad.destination }}" target="_blank" rel="noopener noreferrer sponsored">{{ ad.button_text }} <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+ </article>
+ {% endfor %}
+</section>
+{% endif %}

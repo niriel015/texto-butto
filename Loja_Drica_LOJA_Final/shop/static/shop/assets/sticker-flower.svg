@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" role="img" aria-label="Adesivo ilustrado flower">
+ <defs>
+  <filter id="shadow" x="-35%" y="-35%" width="170%" height="170%"><feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#46213f" flood-opacity=".23"/></filter>
+  <linearGradient id="petal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffc4d8"/><stop offset="1" stop-color="#b776a7"/></linearGradient>
+  <linearGradient id="rose" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe0e8"/><stop offset=".52" stop-color="#f5a4c3"/><stop offset="1" stop-color="#c871aa"/></linearGradient>
+  <linearGradient id="lavender" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fbe6ff"/><stop offset="1" stop-color="#a787d2"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff1c9"/><stop offset="1" stop-color="#d6a66d"/></linearGradient>
+  
+ </defs><g filter="url(#shadow)"><g transform="translate(120 117)">
+ <g stroke="#fffdfc" stroke-width="13" stroke-linejoin="round">
+  <ellipse cy="-55" rx="33" ry="53" fill="url(#rose)"/>
+  <ellipse cy="-55" rx="33" ry="53" fill="url(#petal)" transform="rotate(72)"/>
+  <ellipse cy="-55" rx="33" ry="53" fill="url(#rose)" transform="rotate(144)"/>
+  <ellipse cy="-55" rx="33" ry="53" fill="url(#petal)" transform="rotate(216)"/>
+  <ellipse cy="-55" rx="33" ry="53" fill="url(#rose)" transform="rotate(288)"/>
+ </g><circle r="32" fill="#fff8d9" stroke="#fffdfc" stroke-width="8"/><circle r="20" fill="#f4cb83"/>
+ <circle cx="-8" cy="-6" r="3" fill="#a86686"/><circle cx="10" cy="-7" r="3" fill="#a86686"/><path d="M-9 9Q0 18 9 9" stroke="#a86686" stroke-width="3" fill="none" stroke-linecap="round"/>
+ </g></g></svg>

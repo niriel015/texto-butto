@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" role="img" aria-label="Adesivo ilustrado heart">
+ <defs>
+  <filter id="shadow" x="-35%" y="-35%" width="170%" height="170%"><feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#46213f" flood-opacity=".23"/></filter>
+  <linearGradient id="petal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffc4d8"/><stop offset="1" stop-color="#b776a7"/></linearGradient>
+  <linearGradient id="rose" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe0e8"/><stop offset=".52" stop-color="#f5a4c3"/><stop offset="1" stop-color="#c871aa"/></linearGradient>
+  <linearGradient id="lavender" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fbe6ff"/><stop offset="1" stop-color="#a787d2"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff1c9"/><stop offset="1" stop-color="#d6a66d"/></linearGradient>
+  
+ </defs><g filter="url(#shadow)"><path d="M119 205C93 185 19 133 23 82C26 25 92 18 120 63C149 16 216 26 217 82C221 136 147 185 119 205Z" fill="url(#rose)" stroke="#fffdfc" stroke-width="15" stroke-linejoin="round"/>
+ <path d="M60 77Q77 47 98 65" fill="none" stroke="#fff6fc" stroke-width="12" stroke-linecap="round" opacity=".88"/>
+ <path d="M161 100Q176 112 170 127" stroke="#ffebf5" stroke-width="5" fill="none" stroke-linecap="round"/></g></svg>

@@ -1,0 +1,63 @@
+{% load static %}{% load l10n %}<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ store_info.primary_color }}"><meta name="description" content="Loja Drica: uma boutique feminina para descobrir seu próximo favorito. Produtos e preços atualizados diretamente pela loja.">
+  <title>{% block title %}Loja Drica — Boutique feminina{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'shop/style.css' %}"><link rel="stylesheet" href="{% static 'shop/studio.css' %}"><link rel="stylesheet" href="{% static 'shop/custom-theme.css' %}"><link rel="stylesheet" href="{% static 'shop/drica.css' %}"><script src="{% static 'shop/store.js' %}" defer></script>
+<style id="hf-live-colors">:root{
+ --hf-primary:{{ store_info.primary_color }};
+ --hf-secondary:{{ store_info.secondary_color }};
+ --hf-background:{{ store_info.background_color }};
+ --hf-text:{{ store_info.text_color }};
+ }</style>
+</head>
+<body class="{% if not store_info.animations_enabled %}is-motionless{% endif %}"><div class="scroll-progress" aria-hidden="true"><span id="reading-progress"></span></div>
+<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="svg-library">
+ <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.9a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.3a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+ <symbol id="i-bag" viewBox="0 0 24 24"><path d="M4 8h16l1 13H3L4 8Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></symbol>
+ <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></symbol>
+ <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7"/><path d="m16 16 5 5"/></symbol>
+ <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-7-7 7 7-7 7"/></symbol>
+ <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+ <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+ <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5 19 19M19 5 5 19"/></symbol>
+ <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+ <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+ <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></symbol>
+ <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 5h12v12H3zM15 9h4l3 4v4h-7Z"/><circle cx="7" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></symbol>
+</svg>
+<a class="skip-link" href="#conteudo">Ir para conteúdo</a>
+{% if store_info.announcement_enabled %}<div class="top-announcement"><img class="announcement-sticker" src="{% static 'shop/assets/sticker-sparkle.svg' %}" alt=""> {{ store_info.store_name }} <span class="announcement-divider">—</span> {{ store_info.announcement_text }} <img class="announcement-sticker" src="{% static 'shop/assets/sticker-sparkle.svg' %}" alt=""></div>{% endif %}
+<header class="site-header" id="inicio">
+ <div class="header-inner wrap">
+   <button type="button" class="header-icon mobile-menu" data-menu-toggle aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav"><svg class="icon"><use href="#i-menu"/></svg></button>
+   <a class="wordmark" href="{% url 'home' %}" aria-label="Loja Drica, página inicial">{% if store_info.logo %}<img class="wordmark-sticker hf-logo" src="{{ store_info.logo.url }}" alt="">{% else %}<img class="wordmark-sticker" src="{% static 'shop/assets/sticker-flower.svg' %}" alt="">{% endif %}<span class="hf-store-name">{{ store_info.store_name }}</span></a>
+   <nav class="desktop-navigation" aria-label="Navegação principal"><a href="{% url 'home' %}">Início</a><a href="{% url 'home' %}#colecoes">Coleções</a><a href="{% url 'home' %}#produtos">Produtos</a></nav>
+   <form class="header-search" action="{% url 'home' %}" method="get" role="search"><label class="sr-only" for="header-query">Buscar produtos</label><svg class="icon"><use href="#i-search"/></svg><input id="header-query" name="q" placeholder="O que você procura?" value="{{ q|default:'' }}" maxlength="100"><button type="submit" aria-label="Buscar"><svg class="icon"><use href="#i-arrow"/></svg></button></form>
+   <nav class="header-actions" aria-label="Sua conta e carrinho">
+     {% if user.is_authenticated %}<a class="header-icon desktop-action" title="Meus favoritos" href="{% url 'favorites' %}" aria-label="Favoritos"><svg class="icon"><use href="#i-heart"/></svg></a><a class="header-icon desktop-action" title="Meus pedidos" href="{% url 'orders' %}" aria-label="Meus pedidos"><svg class="icon"><use href="#i-user"/></svg></a>
+     {% else %}<a class="header-icon desktop-action" title="Entrar ou criar conta" href="{% url 'login' %}" aria-label="Entrar"><svg class="icon"><use href="#i-user"/></svg></a>{% endif %}
+     <a class="header-icon cart-icon" title="Meu carrinho" href="{% url 'cart' %}" aria-label="Carrinho, {{ cart_count }} itens"><svg class="icon"><use href="#i-bag"/></svg><span class="cart-count">{{ cart_count }}</span></a>
+   </nav>
+ </div>
+ <nav id="mobile-nav" class="mobile-navigation wrap" aria-label="Menu para celular" hidden>
+  <a href="{% url 'home' %}">Início</a><a href="{% url 'home' %}#colecoes">Coleções</a><a href="{% url 'home' %}#produtos">Produtos</a>
+  {% if user.is_authenticated %}<a href="{% url 'favorites' %}">Meus favoritos ({{ favorite_count }})</a><a href="{% url 'orders' %}">Meus pedidos</a><form action="{% url 'logout' %}" method="post">{% csrf_token %}<button class="text-button">Sair da conta</button></form>{% else %}<a href="{% url 'login' %}">Entrar</a><a href="{% url 'signup' %}">Criar conta</a>{% endif %}
+ </nav>
+</header>
+<main id="conteudo">
+ {% if messages %}<div class="wrap flash-messages" role="status" aria-live="polite">{% for message in messages %}<div class="flash {{ message.tags }}"><img class="flash-sticker" src="{% static 'shop/assets/sticker-sparkle.svg' %}" alt=""><span>{{ message }}</span><button type="button" data-dismiss aria-label="Dispensar mensagem"><svg class="icon"><use href="#i-close"/></svg></button></div>{% endfor %}</div>{% endif %}
+ {% block content %}{% endblock %}
+</main>
+<footer class="site-footer">
+ <div class="wrap footer-upper"><div class="footer-brand"><a class="wordmark" href="{% url 'home' %}">{% if store_info.logo %}<img class="wordmark-sticker hf-logo" src="{{ store_info.logo.url }}" alt="">{% else %}<img class="wordmark-sticker" src="{% static 'shop/assets/sticker-flower.svg' %}" alt="">{% endif %}<span class="hf-store-name">{{ store_info.store_name }}</span></a><p>{{ store_info.footer_description|default:'Uma boutique para encontrar aquilo que combina com você.' }}</p></div>
+ <div class="footer-links"><h3>Explore</h3><a href="{% url 'home' %}#produtos">Todos os produtos</a><a href="{% url 'home' %}#colecoes">Coleções</a><a href="{% url 'cart' %}">Meu carrinho</a></div>
+ <div class="footer-links"><h3>Minha conta</h3>{% if user.is_authenticated %}<a href="{% url 'favorites' %}">Favoritos</a><a href="{% url 'orders' %}">Meus pedidos</a>{% else %}<a href="{% url 'login' %}">Entrar</a><a href="{% url 'signup' %}">Criar conta</a>{% endif %}</div>
+ <div class="footer-links"><h3>Contato</h3>{% if store_info.support_email %}<a href="mailto:{{ store_info.support_email }}">{{ store_info.support_email }}</a>{% else %}<p>O endereço de atendimento será informado pela loja.</p>{% endif %}<p>Pix direto: pagamento conferido pela proprietária. Não há confirmação automática.</p></div>
+ </div>
+ <div class="wrap footer-bottom"><span>© {% now 'Y' %} {{ store_info.store_name|default:'Loja Drica' }}. Todos os direitos reservados.</span><a href="#inicio">Voltar ao topo ↑</a><span>Feito para seu estilo <img class="inline-sticker" src="{% static 'shop/assets/sticker-flower.svg' %}" alt=""></span></div>
+</footer>
+</body></html>

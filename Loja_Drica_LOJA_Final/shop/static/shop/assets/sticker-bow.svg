@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" role="img" aria-label="Adesivo ilustrado bow">
+ <defs>
+  <filter id="shadow" x="-35%" y="-35%" width="170%" height="170%"><feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#46213f" flood-opacity=".23"/></filter>
+  <linearGradient id="petal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffc4d8"/><stop offset="1" stop-color="#b776a7"/></linearGradient>
+  <linearGradient id="rose" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe0e8"/><stop offset=".52" stop-color="#f5a4c3"/><stop offset="1" stop-color="#c871aa"/></linearGradient>
+  <linearGradient id="lavender" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fbe6ff"/><stop offset="1" stop-color="#a787d2"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff1c9"/><stop offset="1" stop-color="#d6a66d"/></linearGradient>
+  
+ </defs><g filter="url(#shadow)"><g stroke="#fffdfc" stroke-width="12" stroke-linejoin="round">
+ <path d="M116 99C84 46 25 48 25 80C25 110 65 130 114 120Z" fill="url(#rose)"/>
+ <path d="M123 99C153 40 213 49 216 77C220 106 167 132 122 120Z" fill="url(#petal)"/>
+ <path d="M106 122L66 200L101 193L125 144Z" fill="url(#rose)"/>
+ <path d="M128 121L174 200L142 189L116 143Z" fill="url(#petal)"/>
+ <path d="M99 100Q122 91 141 103L140 141Q122 150 103 141Z" fill="#f7bdce"/>
+ </g><path d="M44 81Q72 93 93 104M197 80Q168 100 150 105M109 113Q123 124 131 110" stroke="#fff7f9" stroke-width="5" fill="none" opacity=".8"/></g></svg>

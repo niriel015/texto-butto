@@ -1,0 +1,36 @@
+LOJA DRICA — LOJA PUBLICA / INSTALACAO NO WINDOWS 10
+
+ESTE ZIP CONTEM SOMENTE A LOJA (PORTA 8000).
+O PAINEL TEM UM ZIP PROPRIO (PORTA 8001).
+Ambos utilizam o mesmo PostgreSQL 'hyper' e a configuracao privada
+C:\Users\SEU_USUARIO\HyperFemmeCompartilhado\.env
+
+COMO ABRIR (abra a pasta extraida, que ja contem os arquivos BAT):
+1. Faça backup da configuracao e dos dados do PostgreSQL antes de atualizar.
+2. Execute 01_PREPARAR_LOJA.bat. Isso instala dependencias e executa a migracao 0004.
+3. Execute 02_INICIAR_LOJA.bat.
+4. Acesse http://127.0.0.1:8000/
+5. Para validar: .\.venv\Scripts\python.exe manage.py test shop
+
+NOVO: publicidade na AREA PRINCIPAL (CARROSSEL)
+No painel, acesse Anuncios e campanhas > Novo anuncio.
+Selecione 'Banner principal (carrossel)', adicione foto, titulo, link HTTPS
+valido e publique. Ate 24 anuncios ativos sao carregados da base.
+A secao 'Detalhes que fazem a diferenca' foi retirada.
+
+PIX DIRETO: a chave recebida foi configurada como +5511971992138.
+O BR Code Pix contem o valor exato dos produtos (ex.: R$ 11,90) e um
+identificador de pedido. O banco do comprador pode permitir editar o valor.
+Nao confirma o pagamento automaticamente: a pessoa proprietaria deve
+consultar o extrato, conferir o valor recebido e registrar manualmente no painel.
+SO APOS ISSO podera escolher 'Aceitar pedido'. A pessoa cliente ve entao
+'Pedido aceito' em Meus pedidos.
+A pessoa recebedora mostrada pelo app bancario DEVE ser conferida antes de pagar.
+Um Pix estatico pode continuar utilizavel mesmo depois do cancelamento do pedido.
+
+SEM ENTREGA: nao ha calculo de frete nem transportadora. Retirada a combinar.
+
+PARA PRODUCAO: HTTPS, nova SECRET_KEY, senhas privadas fortes, backup, midia
+persistente, testes de checkout em app bancario REAL e politica de privacidade.
+Nenhum pagamento real foi testado nem confirmado por esta entrega.
+Nao compartilhe o arquivo .env ou credenciais.
